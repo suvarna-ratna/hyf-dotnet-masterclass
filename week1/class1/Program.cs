@@ -38,7 +38,9 @@ string input1 = "Intellectualization";
 int vowelCount = GetVowelCount(input1); //TODO: Implement GetVowelCount
 Console.WriteLine($"Number of vowels: {vowelCount}");
 //Math/Array
-app.MapGet("/math-array", ( int[] arr ) => GetResult(arr));
+int[] arr = new[] { 271, -3, 1, 14, -100, 13, 2, 1, -8, -59,  -1852, 41, 5 };
+app.MapGet("/math-array", () => GetResult(arr));
+app.MapGet("/mathtest-array", (int [] inputArr) => GetResult(inputArr));
 int[] GetResult(int[] arr)
 {
     
@@ -60,7 +62,6 @@ int[] GetResult(int[] arr)
     return new int[] { negativeSum, positiveProd };
 
 }
-int[] arr = new[] { 271, -3, 1, 14, -100, 13, 2, 1, -8, -59,  -1852, 41, 5 };
 int[] result = GetResult(arr); //TODO: Implement GetResult
 Console.WriteLine($"Sum of negative numbers: {result[0]}. Multiplication of positive numbers: {result[1]}");
 // Classical task
