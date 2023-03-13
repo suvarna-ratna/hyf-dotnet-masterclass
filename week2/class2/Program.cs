@@ -4,8 +4,8 @@ var app = builder.Build();
 app.MapGet("/", () => "Hello World!");
 
 //Caclulator
-app.MapGet("/calc", (string numberOne,string numberTwo,string operation) => calcFun(numberOne,numberTwo,operation));
-string calcFun(string numberOne,string numberTwo,string operation)
+app.MapGet("/calc", (string numberOne,string numberTwo,string operation) =>CalcFun(numberOne,numberTwo,operation));
+string CalcFun(string numberOne,string numberTwo,string operation)
 {
     var numberOneIsValid = int.TryParse(numberOne, out var parsedNumberOne);
     var numberTwoIsValid = int.TryParse(numberTwo, out var parsedNumberTwo);
